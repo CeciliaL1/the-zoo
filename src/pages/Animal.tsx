@@ -2,24 +2,32 @@ import { useLoaderData } from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
 import './styles/animal.css'
 import { useState } from "react"
+import { formatDate, getFeedDate } from "../helperfunctions/getDate"
 
 export const Animal = () => {
     const animal = useLoaderData() as IAnimal;
-    const [isFed, setIsFed] = useState(animal.isFed)
+    const [isFed, setIsFed] = useState(animal.isFed);
+    const formatedDate = formatDate(animal.lastFed);
+    const [lastFed, setLastFed] = useState(formatedDate);
 
+    console.log(lastFed)
+
+    
     const handleFeed = (id: string) => {
         const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
 
         animalsInStore.map((animal) => {
             if (animal.id === id) {
-                animal.isFed = true
+                animal.isFed = true;
+                animal.lastFed = getFeedDate();
+                setLastFed(animal.lastFed)
                 setIsFed(true)
             }
         })
         localStorage.setItem('animals', JSON.stringify(animalsInStore))
     }
- 
-    return (
+
+    return ( 
 
         <>
         <div className="animal-card">
@@ -30,8 +38,8 @@ export const Animal = () => {
             </div>
 
             <div className="animal-feed-info">
-                {isFed ? <p>Full</p> : <p>Hungry!</p>}
-                <p>{animal.lastFed}</p>
+                {isFed ? <p>Mätt!</p> : <p>Hungrig!</p>}
+                <p>{lastFed}</p>
                 <button disabled={isFed} onClick={() => {handleFeed(animal.id)}}>Mata mig!</button>
                 
 
@@ -41,3 +49,11 @@ export const Animal = () => {
         </>
     )
 }
+
+/*
+
+    const getDate = () => {
+     
+
+        return `${year}-${month}-${day} ${hour}:${minute > 10 ? `0${minute}` : minute }`
+    }*/

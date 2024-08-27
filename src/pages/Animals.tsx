@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
 import './styles/animals.css'
 import { useState } from "react"
@@ -6,8 +6,9 @@ import { useState } from "react"
 
 export const Animals = () => {
 
+   
     const [animals, setAnimals] = useState<IAnimal[]>(JSON.parse(localStorage.getItem('animals') || '[]'))
-
+    
      
 
     return (
