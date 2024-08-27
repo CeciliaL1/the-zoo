@@ -10,13 +10,13 @@ Använd react med typescript för att skapa en sida för ett zoo. En lista med d
 
 [x] Det skall gå att klicka på ett djur för att se mer information om detta djur via en egen route. 
 
-[] Från djurets egna sida skall du kunna markera om djuret nu är matat eller inte via en knapp som heter Mata djur. När du klickar på denna knapp skall djurets status ändras så att det framgår att det är matat. Och det skall inte längre gå att klicka på knappen. Du behöver också lägga in tiden som djuret matades. 
+[x] Från djurets egna sida skall du kunna markera om djuret nu är matat eller inte via en knapp som heter Mata djur. När du klickar på denna knapp skall djurets status ändras så att det framgår att det är matat. Och det skall inte längre gå att klicka på knappen. Du behöver också lägga in tiden som djuret matades. 
 
-[] Ni behöver ha en god struktur i ert projekt vad gäller komponenter och filer
+[x] Ni behöver ha en god struktur i ert projekt vad gäller komponenter och filer
 
 ### VG: 
 
-[] Samtliga krav för G
+[x] Samtliga krav för G
 
 [] Hantera trasiga bildlänkar på ett snyggt sätt
 
