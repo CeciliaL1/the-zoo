@@ -1,0 +1,9 @@
+
+.animal-card {
+ display: flex;
+ flex-direction: row;
+
+}
+.animal-info img{
+    width: 200px;
+}
