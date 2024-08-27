@@ -1,0 +1,15 @@
+.animals {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.single-animal{
+    width: 180px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.single-animal img {
+    width: 140px;
+}
