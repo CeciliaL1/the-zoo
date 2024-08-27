@@ -24,7 +24,6 @@ export const animalsLoader = async () => {
 
 export const animalLoader = async ({params}: IMovieLoader) => {
     
-    console.log(animalInStoreage.find((animal: IAnimal) => animal.id == params.id))
     if (animalInStoreage.length > 0) {
         return animalInStoreage.find((animal:IAnimal) => animal.id == params.id)
     } else {
