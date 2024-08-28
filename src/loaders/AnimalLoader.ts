@@ -11,15 +11,13 @@ const animalInStoreage = JSON.parse(localStorage.getItem('animals') || '[]')
 
 export const animalsLoader = async () => {
    
-
     if (animalInStoreage.length > 0) {
         return animalInStoreage
     } else {
         const response = await getData<IAnimal[]>(`${BASE_URL}`)
         localStorage.setItem('animals', JSON.stringify(response))
         return response
-    }
-   
+    } 
 };
 
 export const animalLoader = async ({params}: IMovieLoader) => {
@@ -30,5 +28,4 @@ export const animalLoader = async ({params}: IMovieLoader) => {
         const response = await getData<IAnimal>(`${BASE_URL}/${params.id}`)
         return response
     }
-    
 }
