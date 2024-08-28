@@ -22,7 +22,8 @@ export const Animals = () => {
             animal.isFed = false;
         }
        })
-        localStorage.setItem('animals', JSON.stringify(animalsInStore))
+       localStorage.setItem('animals', JSON.stringify(animalsInStore))
+        
     },[])
 
     return (
