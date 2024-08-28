@@ -18,8 +18,8 @@ Använd react med typescript för att skapa en sida för ett zoo. En lista med d
 
 [x] Samtliga krav för G
 
-[] Hantera trasiga bildlänkar på ett snyggt sätt
+[x] Hantera trasiga bildlänkar på ett snyggt sätt
 
-[] När du går in på djurets sida nästa gång kontrollerar du om det har gått mer än tre timmar sedan senaste matningen. Om så är fallet nollställs matningen och det skall gå att mata djuret igen. 
+[x] När du går in på djurets sida nästa gång kontrollerar du om det har gått mer än tre timmar sedan senaste matningen. Om så är fallet nollställs matningen och det skall gå att mata djuret igen. 
 
-[] Ni skall presentera en liten notis på startsidan, samt på djursidan, om att ett djur behöver matas om det är mer än fyra timmar sedan djuret matades.•Ni behöver användaminst en tjänster i er applikation, både för hämtning av data och för gemensamma beräkningar.
+[x] Ni skall presentera en liten notis på startsidan, samt på djursidan, om att ett djur behöver matas om det är mer än fyra timmar sedan djuret matades.•Ni behöver användaminst en tjänster i er applikation, både för hämtning av data och för gemensamma beräkningar.
