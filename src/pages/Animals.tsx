@@ -1,15 +1,29 @@
-import { Link} from "react-router-dom"
+import { Link, useLoaderData} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
 import './styles/animals.css'
-import { useState } from "react"
+import { useEffect } from "react";
+import { compareDates } from "../helperfunctions/getDate";
+
+
 
 
 export const Animals = () => {
 
    
-    const [animals, setAnimals] = useState<IAnimal[]>(JSON.parse(localStorage.getItem('animals') || '[]'))
+    const animals = useLoaderData() as IAnimal[];
     
-     
+    useEffect(() => {
+        const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
+   
+       animalsInStore.map((animal)  => {
+        const time = compareDates(animal.lastFed)
+
+        if(time) {
+            animal.isFed = false;
+        }
+       })
+        localStorage.setItem('animals', JSON.stringify(animalsInStore))
+    },[])
 
     return (
         <>

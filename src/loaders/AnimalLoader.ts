@@ -7,10 +7,10 @@ const BASE_URL = 'https://animals.azurewebsites.net/api/animals'
 interface IMovieLoader {
     params: Params<string>
 }
-const animalInStoreage = JSON.parse(localStorage.getItem('animals') || '[]')
+
 
 export const animalsLoader = async () => {
-   
+    const animalInStoreage = JSON.parse(localStorage.getItem('animals') || '[]')
     if (animalInStoreage.length > 0) {
         return animalInStoreage
     } else {
@@ -21,6 +21,7 @@ export const animalsLoader = async () => {
 };
 
 export const animalLoader = async ({params}: IMovieLoader) => {
+    const animalInStoreage = JSON.parse(localStorage.getItem('animals') || '[]')
     
     if (animalInStoreage.length > 0) {
         return animalInStoreage.find((animal:IAnimal) => animal.id == params.id)

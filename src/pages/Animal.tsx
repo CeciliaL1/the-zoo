@@ -1,46 +1,43 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useParams } from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
-import './styles/animal.css'
 import { useEffect, useState } from "react"
 import { compareDates, formatDate, getDate } from "../helperfunctions/getDate"
+import './styles/animal.css'
+
 
 export const Animal = () => {
     const animal = useLoaderData() as IAnimal;
-    const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
+   
+    const { id } = useParams<string>() 
+    
+     
     const [isFed, setIsFed] = useState(animal.isFed);
     const formatedDate = formatDate(animal.lastFed);
     const [lastFed, setLastFed] = useState(formatedDate);
+  
+    
     
 
 
-   useEffect(() => {
-    const time = compareDates(lastFed)
+    
 
-    if (time) {
-        setIsFed(false)
-        animalsInStore.map((animal) => {
-            animal.isFed = false;
-        });
-        localStorage.setItem('animals', JSON.stringify(animalsInStore))
-    }
-   },[lastFed, animalsInStore])
  
 
     const handleFeed = (id: string) => {
-       
+        const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
         animalsInStore.map((animal) => {
+
             if (animal.id === id) {
                 animal.isFed = true;
                 animal.lastFed = getDate();
                 setLastFed(animal.lastFed)
-                setIsFed(true)
+                setIsFed(animal.isFed)
             }
         })
         localStorage.setItem('animals', JSON.stringify(animalsInStore))
     }
 
     return ( 
-
         <>
         <div className="animal-card">
             <div className="animal-info">
