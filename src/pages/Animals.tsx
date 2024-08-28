@@ -33,7 +33,7 @@ export const Animals = () => {
                         <div style={{backgroundColor: animal.isFed ? 'Green' : 'pink'}} className="single-animal" key={animal.id}>
                               {animal.isFed ? <p>Mätt</p> : <p>Hungrig!</p> }
                             <h3>{animal.name}</h3>
-                            <Link to={`/animals/${animal.id}`}><img src={animal.imageUrl} alt={animal.name} /></Link>
+                            <Link to={`/animals/${animal.id}`}><img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/></Link>
                             <p>{animal.shortDescription}</p>
                           
                         </div>

@@ -1,27 +1,16 @@
-import { useLoaderData, useParams } from "react-router-dom"
+import { useLoaderData} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
-import { useEffect, useState } from "react"
-import { compareDates, formatDate, getDate } from "../helperfunctions/getDate"
+import {  useState } from "react"
+import { formatDate, getDate } from "../helperfunctions/getDate"
 import './styles/animal.css'
 
 
 export const Animal = () => {
     const animal = useLoaderData() as IAnimal;
-   
-    const { id } = useParams<string>() 
-    
-     
+
     const [isFed, setIsFed] = useState(animal.isFed);
     const formatedDate = formatDate(animal.lastFed);
     const [lastFed, setLastFed] = useState(formatedDate);
-  
-    
-    
-
-
-    
-
- 
 
     const handleFeed = (id: string) => {
         const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
@@ -42,7 +31,7 @@ export const Animal = () => {
         <div className="animal-card">
             <div className="animal-info">
             <h3>{animal.name}</h3>
-            <img src={animal.imageUrl} alt={animal.name} />
+            <img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/>
             <p>{animal.longDescription}</p>
             </div>
 
@@ -59,11 +48,3 @@ export const Animal = () => {
         </>
     )
 }
-
-/*
-
-    const getDate = () => {
-     
-
-        return `${year}-${month}-${day} ${hour}:${minute > 10 ? `0${minute}` : minute }`
-    }*/
