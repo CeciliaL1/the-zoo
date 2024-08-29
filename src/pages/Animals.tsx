@@ -1,10 +1,8 @@
 import { Link, useLoaderData} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
-import './styles/animals.css'
-
 import { compareDates } from "../helperfunctions/getDate";
-
-
+import { setLocalStorage } from "../helperfunctions/setLocalStorage";
+import './styles/animals.css'
 
 
 export const Animals = () => {
@@ -17,9 +15,8 @@ export const Animals = () => {
             animal.isFed = false;
         }
        })
-       localStorage.setItem('animals', JSON.stringify(animals))
+        setLocalStorage('animals',animals)
         
-
     return (
         <>
             <div className="animals">
@@ -29,9 +26,7 @@ export const Animals = () => {
                             <h3>{animal.name}</h3>
                             <Link to={`/animals/${animal.id}`}><img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/></Link>
                             <p>{animal.shortDescription}</p>
-                          
                         </div>
-                    
                 ) )}
             </div>
         </>

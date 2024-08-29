@@ -2,18 +2,20 @@ import { useLoaderData} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
 import {  useState } from "react"
 import { formatDate, getDate } from "../helperfunctions/getDate"
+import { getLocalStorage } from "../helperfunctions/getLocalStorage"
+import { setLocalStorage } from "../helperfunctions/setLocalStorage"
 import './styles/animal.css'
 
 
 export const Animal = () => {
     const animal = useLoaderData() as IAnimal;
+    const formatedDate = formatDate(animal.lastFed);
 
     const [isFed, setIsFed] = useState(animal.isFed);
-    const formatedDate = formatDate(animal.lastFed);
     const [lastFed, setLastFed] = useState(formatedDate);
 
-    const handleFeed = (id: string) => {
-        const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
+    const handleFeed = async (id: string) => {
+        const animalsInStore = await getLocalStorage<IAnimal[]>('animals')
         animalsInStore.map((animal) => {
 
             if (animal.id === id) {
@@ -23,7 +25,7 @@ export const Animal = () => {
                 setIsFed(animal.isFed)
             }
         })
-        localStorage.setItem('animals', JSON.stringify(animalsInStore))
+        setLocalStorage('animals', animalsInStore)
     }
 
     return ( 
@@ -40,10 +42,7 @@ export const Animal = () => {
                 <p>{lastFed}</p>
                 {isFed ? <p>{animal.name} är mätt!</p> : <p>{animal.name} är hungrig!</p>}
                 <button disabled={isFed} onClick={() => {handleFeed(animal.id)}}>Mata mig!</button>
-                
-
-            </div>
-            
+            </div>   
         </div>
         </>
     )
