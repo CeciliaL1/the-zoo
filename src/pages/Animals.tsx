@@ -1,30 +1,24 @@
 import { Link, useLoaderData} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
 import './styles/animals.css'
-import { useEffect } from "react";
+
 import { compareDates } from "../helperfunctions/getDate";
 
 
 
 
 export const Animals = () => {
-
-   
     const animals = useLoaderData() as IAnimal[];
-    
-    useEffect(() => {
-        const animalsInStore = JSON.parse(localStorage.getItem('animals') || '[]') as IAnimal[];
-   
-       animalsInStore.map((animal)  => {
+  
+       animals.map((animal)  => {
         const time = compareDates(animal.lastFed)
 
         if(time) {
             animal.isFed = false;
         }
        })
-       localStorage.setItem('animals', JSON.stringify(animalsInStore))
+       localStorage.setItem('animals', JSON.stringify(animals))
         
-    },[])
 
     return (
         <>

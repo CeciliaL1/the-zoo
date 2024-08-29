@@ -16,16 +16,17 @@ export const Home = () => {
                     if (!animal.isFed) {
                         return (
                             <>
-                            <div className="short-presentation" key={animal.id}>
+                           
+                            <div className="short-presentation"  key={animal.id} >
                                 <p>{animal.name} är hungrig!</p>
                                 <img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/>
-                            </div>
-                                
+                            </div>                
                             </>
                         )
                     }
                 })}
-           </div>
+             </div>
+           
         </>
     )
 }
