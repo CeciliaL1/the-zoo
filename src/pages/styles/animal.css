@@ -4,6 +4,9 @@
  flex-direction: row;
 
 }
+.animal-info {
+    width: 900px;
+}
 .animal-info img{
     width: 200px;
 }
