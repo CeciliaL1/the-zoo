@@ -2,11 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Animals } from "./pages/Animals";
-import { animalLoader, animalsLoader } from "./loaders/AnimalLoader";
 import { Animal } from "./pages/Animal";
 import { NotFound } from "./pages/NotFound";
 import { Suspense } from "react";
 import { Spinner } from "./components/Spinner";
+import { animalLoader, animalsLoader } from "./loaders/AnimalLoader";
+
 
 export const router = createBrowserRouter([
     {
