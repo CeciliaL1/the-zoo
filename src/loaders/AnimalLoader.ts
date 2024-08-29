@@ -10,6 +10,7 @@ interface IAnimalLoader {
     params: Params<string>
 }
 
+
 export const animalsLoader = async () => {
     const animalInStoreage = await getLocalStorage<IAnimal[]>('animals')
     if (animalInStoreage.length > 0) {
