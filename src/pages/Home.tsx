@@ -3,6 +3,7 @@ import { IAnimal } from "../models/IAnimal";
 import './styles/home.css'
 import { setLocalStorage } from "../helperfunctions/setLocalStorage";
 import { compareDates } from "../helperfunctions/getDate";
+import { ImagePresentation } from "../components/ImagePresentation";
 
 export const Home = () => {
        
@@ -27,8 +28,7 @@ export const Home = () => {
            {animals.map((animal)  => (
                 !animal.isFed && (<div key={animal.id} className="single-animal" >
                     <h4>{animal.name} är hungrig!</h4>
-                    <img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/>
-                        
+                    <ImagePresentation name={animal.name} src={animal.imageUrl}></ImagePresentation>
                 </div>)
            ))}
             </div>

@@ -5,6 +5,7 @@ import { formatDate, getDate } from "../helperfunctions/getDate"
 import { getLocalStorage } from "../helperfunctions/getLocalStorage"
 import { setLocalStorage } from "../helperfunctions/setLocalStorage"
 import './styles/animal.css'
+import { ImagePresentation } from "../components/ImagePresentation"
 
 
 export const Animal = () => {
@@ -33,7 +34,7 @@ export const Animal = () => {
         <div className="animal-card">
             <div className="animal-info">
             <h3>{animal.name}</h3>
-            <img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/>
+            <ImagePresentation name={animal.name} src={animal.imageUrl}></ImagePresentation>
             <p>{animal.longDescription}</p>
             </div>
 

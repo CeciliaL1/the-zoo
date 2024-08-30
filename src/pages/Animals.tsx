@@ -3,6 +3,7 @@ import { IAnimal } from "../models/IAnimal"
 import { compareDates } from "../helperfunctions/getDate";
 import { setLocalStorage } from "../helperfunctions/setLocalStorage";
 import './styles/animals.css'
+import { ImagePresentation } from "../components/ImagePresentation";
 
 
 export const Animals = () => {
@@ -24,7 +25,9 @@ export const Animals = () => {
                         <div style={{backgroundColor: animal.isFed ? 'Green' : 'pink'}} className="single-animal" key={animal.id}>
                               {animal.isFed ? <p>Mätt</p> : <p>Hungrig!</p> }
                             <h3>{animal.name}</h3>
-                            <Link to={`/animals/${animal.id}`}><img src={animal.imageUrl} alt={animal.name} onError={({currentTarget}) => {currentTarget.src = '../public/placeholder-image.jpg'}}/></Link>
+                            <Link to={`/animals/${animal.id}`}>
+                                <ImagePresentation name={animal.name} src={animal.imageUrl}></ImagePresentation>
+                            </Link>
                             <p>{animal.shortDescription}</p>
                         </div>
                 ) )}
