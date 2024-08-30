@@ -18,10 +18,10 @@ export const compareDates = (givenDate: string) => {
     const date = new Date(givenDate);
     const now = new Date(getDate());
 
-  // const threeHoursAgo = new Date(now.getTime() - 3 * 60 * 60 * 1000);
-   const twentySecondsAgo = new Date(now.getTime() - 20 * 1000); // hungry again in 20 seconds, used when developing
+  const threeHoursAgo = new Date(now.getTime() - 3 * 60 * 60 * 1000);
+   //const twentySecondsAgo = new Date(now.getTime() - 20 * 1000); // hungry again in 20 seconds, used when developing
 
-    if (date < twentySecondsAgo) {
+    if (date < threeHoursAgo) {
        return true
     } else {
         return false

@@ -14,7 +14,7 @@ export const Home = () => {
     return (
         <>
            <h2> Välkommen, dina djur i Zoo'et kanske behöver dig!</h2>
-           <p>Här får du en överblick över vilka djur som är hungriga</p>
+           <p>Här får du en överblick över vilka djur som är hungriga gå till Djuren för att sköta om dem</p>
            
            <div className="animals">
            {animals.map((animal)  => (

@@ -14,14 +14,16 @@ export const Animals = () => {
         <>
             <div className="animals">
                 {animals.map((animal) => (
-                        <div style={{backgroundColor: animal.isFed ? 'Green' : 'pink'}} className="single-animal" key={animal.id}>
+                   
+                        <div style={{backgroundColor: animal.isFed ? '#9de0bb' : '#f09d81'}} className="single-animal" >
                               {animal.isFed ? <p>Mätt</p> : <p>Hungrig!</p> }
                             <h3>{animal.name}</h3>
-                            <Link to={`/animals/${animal.id}`}>
-                                <ImagePresentation name={animal.name} src={animal.imageUrl}></ImagePresentation>
-                            </Link>
+                             <ImagePresentation name={animal.name} src={animal.imageUrl}></ImagePresentation>
+                            
                             <p>{animal.shortDescription}</p>
+                            <Link to={`/animals/${animal.id}`} ><button>Ta hand om djuret</button></Link>
                         </div>
+                        
                 ) )}
             </div>
         </>

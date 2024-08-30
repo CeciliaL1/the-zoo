@@ -1,6 +1,7 @@
 button {
     width: 250px;
     height: 50px;
+    margin: 5px;
     text-transform: uppercase;
     letter-spacing: 5px;
     border: none;
@@ -16,4 +17,8 @@ background-color: rgb(109, 131, 124);
 button:disabled {
     background-color: gray;
     cursor: auto;
+}
+button a {
+    color: black;
+    text-decoration: none;
 }

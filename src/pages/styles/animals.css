@@ -2,6 +2,7 @@
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 10px;
 }
 .single-animal{
@@ -12,4 +13,12 @@
 }
 .single-animal img {
     width: 140px;
+}
+.single-animal button {
+    width: 120px;
+    letter-spacing: 1px;
+}
+.single-animal a {
+    color: black;
+    text-decoration: none;
 }
