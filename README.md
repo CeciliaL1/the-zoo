@@ -1,25 +1,46 @@
 # The Zoo
-Använd react med typescript för att skapa en sida för ett zoo. En lista med djur finns tillgänglig på: https://animals.azurewebsites.net/api/animals
 
-[x] Du behöver ladda ner djuren till din applikation och spara dem i applikationen. 
+# Application requirements
 
-[x] Det kommer inte gå att ändra djuren via api:t. Förslagsvis lagrar du dem i localStorage eller sessionStorage. 
+A Zoo where you take care of the animals and feed them. The animals is hungry every 3 hours.
 
-### För G: 
-[x] Skapa en SPA (i react med typescript) som innehåller en startsida där djuren presenteras med namn och en kort beskrivning.
+- SPA in react with TypeScript
+- The start page should show which animals that are hungry
+- Animals page should present the animals and a short description of the animal.
+- You should be able to click an animal to get more information through a own route
+- You should be able to feed the animal, the animals status should be changed from hungry to full and the button is disabled. 
+- Time from last feed is shown. If 3 hours has passed the animal is hungry again and you can feed it.
+- Handle imagelinks that doesn't work.
+- Use at least one service in your aoolication
 
-[x] Det skall gå att klicka på ett djur för att se mer information om detta djur via en egen route. 
 
-[x] Från djurets egna sida skall du kunna markera om djuret nu är matat eller inte via en knapp som heter Mata djur. När du klickar på denna knapp skall djurets status ändras så att det framgår att det är matat. Och det skall inte längre gå att klicka på knappen. Du behöver också lägga in tiden som djuret matades. 
+## Author
 
-[x] Ni behöver ha en god struktur i ert projekt vad gäller komponenter och filer
+- [@CeciliaL1](https://github.com/CeciliaL1)
 
-### VG: 
+## Project built with
 
-[x] Samtliga krav för G
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-[x] Hantera trasiga bildlänkar på ett snyggt sätt
 
-[x] När du går in på djurets sida nästa gång kontrollerar du om det har gått mer än tre timmar sedan senaste matningen. Om så är fallet nollställs matningen och det skall gå att mata djuret igen. 
+## Start project
 
-[x] Ni skall presentera en liten notis på startsidan, samt på djursidan, om att ett djur behöver matas om det är mer än fyra timmar sedan djuret matades.•Ni behöver användaminst en tjänster i er applikation, både för hämtning av data och för gemensamma beräkningar.
+```
+npm install
+
+```
+
+## Dependencies
+
+```
+react-router-dom
+
+```
+
+## Lessons learned
+
+Routing.
+LoaderData
