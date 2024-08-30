@@ -2,7 +2,7 @@
 
 # Application requirements
 
-A Zoo where you take care of the animals and feed them. The animals is hungry every 3 hours.
+A Zoo where you take care of the animals and feed them. The animals are hungry every 3 hours.
 
 - SPA in react with TypeScript
 - The start page should show which animals that are hungry
