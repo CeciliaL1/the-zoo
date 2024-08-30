@@ -1,22 +1,14 @@
 import { Link, useLoaderData} from "react-router-dom"
 import { IAnimal } from "../models/IAnimal"
-import { compareDates } from "../helperfunctions/getDate";
-import { setLocalStorage } from "../helperfunctions/setLocalStorage";
-import './styles/animals.css'
 import { ImagePresentation } from "../components/ImagePresentation";
+import { checkIfAnimalIsFed } from "../helperfunctions/checkIfAnimalIsFed";
+import './styles/animals.css'
 
 
 export const Animals = () => {
     const animals = useLoaderData() as IAnimal[];
   
-       animals.map((animal)  => {
-        const time = compareDates(animal.lastFed)
-
-        if(time) {
-            animal.isFed = false;
-        }
-       })
-        setLocalStorage('animals',animals)
+   checkIfAnimalIsFed(animals)
         
     return (
         <>
