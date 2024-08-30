@@ -11,7 +11,7 @@ export const getDate = () => {
 }
 
 export const formatDate = (date: string) =>{
- return date.replace('T', ' ')
+ return date.slice(0, 16).replace('T', ' ')
 };
 
 export const compareDates = (givenDate: string) => {
