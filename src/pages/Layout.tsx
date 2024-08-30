@@ -6,7 +6,7 @@ export const Layout = () => {
     return (
         <>
             <header>
-                <h2>The ZooKeeper</h2>
+                <h2>Zoo</h2>
                 <nav>
                     <ul>
                         <li><NavLink to='/'>Start</NavLink></li>
