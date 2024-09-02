@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import { Spinner } from "./components/Spinner";
 import { animalLoader, animalsLoader } from "./loaders/AnimalLoader";
 
+const repo = '/the-zoo-CeciliaL1/'
 
 export const router = createBrowserRouter([
     {
@@ -30,4 +31,6 @@ export const router = createBrowserRouter([
             loader: animalLoader
         }]
     }
-])
+],
+{ basename: repo }
+);
