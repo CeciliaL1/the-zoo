@@ -34,6 +34,7 @@ export const Animal = () => {
         <div className="animal-card">
             <div className="animal-info">
             <h3>{animal.name}</h3>
+            <p>Född: {animal.yearOfBirth}</p>
             <ImagePresentation name={animal.name} src={animal.imageUrl}></ImagePresentation>
             <p>{animal.longDescription}</p>
             {animal.medicine === 'Inga' ? <p>Inga mediciner</p> : <p>Medicin : {animal.medicine}</p>}
