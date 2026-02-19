@@ -32,5 +32,5 @@ export const router = createBrowserRouter([
         }]
     }
 ],
-{ basename: /the-zoo/ }
+{ basename: "/the-zoo/" }
 );
